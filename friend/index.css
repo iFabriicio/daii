@@ -1,0 +1,282 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* General (sin scroll de página) */
+html, body {
+    overflow: hidden;
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: transparent;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Container principal */
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: transparent;
+}
+
+/* Panel principal */
+.friend-box {
+    position: relative;
+    background: #a80000f3;
+    width: 620px;
+    height: 60vh;
+    max-width: 95%;
+    padding: 50px;
+    border-radius: 18px;
+    box-shadow: 0 0 18px rgba(200, 0, 0, 0.3);
+    animation: fadeIn 0.6s ease-in-out;
+
+    max-height: 82vh;
+    overflow-y: auto;
+}
+
+/* Scroll interno */
+.friend-box::-webkit-scrollbar {
+    width: 8px;
+}
+
+.friend-box::-webkit-scrollbar-thumb {
+    background: #ff0000;
+    border-radius: 6px;
+}
+
+.friend-box::-webkit-scrollbar-track {
+    background: #2a0000;
+}
+
+.friend-box {
+    scrollbar-width: thin;
+    scrollbar-color: #ff0000 #2a0000;
+}
+
+/* Título */
+.friend-box .title {
+    text-align: center;
+    color: white;
+    font-size: 26px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+/* 🔥🔥 NUEVO: Fondo opaco SOLO en zona marcada */
+.friend-content {
+    background: rgba(7, 0, 0, 0.45);
+    backdrop-filter: blur(6px);
+    padding: 26px;
+    border-radius: 15px;
+    margin-top: 17px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Lista */
+.friend-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Tarjetas */
+.friend-card {
+    background: #610101;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.friend-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 12px rgba(180, 20, 20, 0.35);
+}
+
+/* Iniciales + imagen */
+.initial {
+    width: 55px;
+    height: 55px;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.initial img.avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.initial .letters {
+    position: absolute;
+    z-index: 2;
+    color: white;
+    font-size: 18px;
+    font-weight: 700;
+    background: rgba(0,0,0,0.35);
+    padding: 2px 6px;
+    border-radius: 4px;
+    backdrop-filter: blur(2px);
+}
+
+/* Info */
+.info {
+    flex: 1;
+    margin-left: 12px;
+}
+
+.info .name {
+    margin: 0;
+    color: #fff;
+    font-weight: 600;
+    font-size: 17px;
+}
+
+.info .xat {
+    margin-top: 2px;
+    color: #ffcccc;
+    font-size: 14px;
+}
+
+/* Botón */
+.btn {
+    background: #e60000;
+    color: white;
+    padding: 7px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: 0.3s;
+    box-shadow: 0 0 6px rgba(255, 30, 30, 0.25);
+}
+
+.btn:hover {
+    transform: scale(1.08);
+    background: #ff3333;
+    box-shadow: 0 0 10px rgba(255, 90, 90, 0.4);
+}
+
+/* =======================================
+   ❌ BOTÓN DE CERRAR (FUERA DEL CUADRO)
+   ======================================= */
+.close-btn{
+    position: fixed;
+
+    /* 🔥 MISMA LÓGICA QUE MARRIED / GALERÍA */
+    top: calc(46% - 30vh);
+    left: calc(48% + 310px);
+
+    width:32px;
+    height:32px;
+    background:#000;
+    color:white;
+    font-size:22px;
+    font-weight:bold;
+    border-radius:4px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    cursor:pointer;
+
+    box-shadow:0 0 15px rgba(0,0,0,0.7);
+    transition:0.2s ease;
+
+    pointer-events: auto;
+    z-index: 10000;
+}
+
+.close-btn:hover{
+    background:#222;
+    transform:scale(1.1);
+}
+
+
+.close-btn:hover {
+    transform: scale(1.18);
+    background: #2b2b2b;
+    box-shadow: 0 0 12px rgba(31, 31, 31, 0.5);
+}
+
+/* Animación */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+html, body, a, div, span, p, img, button, input, textarea, select, * {
+    cursor: none !important;
+}
+
+#cursor-corazon {
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999999;
+    transform: translate(-50%, -50%);
+}
+
+#cursor-corazon::before {
+    content: "❤";
+    font-size: 24px;
+    color: #ff4d6d;
+    text-shadow: 0 0 6px rgba(255,77,109,0.7);
+}
+
+@keyframes clickFX {
+    0% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(2); opacity: 0; }
+}
+
+html, body {
+    cursor: none !important;
+}
+
+.corazon {
+    position: fixed;
+    pointer-events: none;
+    z-index: 2147483647;
+    font-size: 16px;
+    color: #ff4d6d;
+    animation: flotar 3.5s ease-out forwards;
+    text-shadow: 0 0 6px rgba(255,77,109,0.6);
+}
+
+@keyframes flotar {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-120px) scale(1.5);
+        opacity: 0;
+    }
+}
+
+.married-box{
+    overflow: visible !important;
+}
