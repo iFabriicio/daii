@@ -161,10 +161,10 @@ body{
 .firma-box{
   position:absolute;
   left:170px;
-  top:530px;
+  top:580px;
 
-  width:550px;
-  height:230px;
+  width:500px;
+  height:170px;
 
   border-radius:18px;
   overflow:hidden;
@@ -903,6 +903,37 @@ html, body{
   overflow: hidden !important;
 }
 
+/* CONTENEDOR DEL NOMBRE */
+.name-wrapper{
+  margin-top:220px;
+  text-align:center;
+}
+
+/* FILA NOMBRE + BANDERA */
+.name-row{
+  display:inline-flex;
+  align-items:center;
+  gap:14px;
+}
+
+/* BANDERA ARGENTINA */
+.flag-ar{
+  width:38px;
+  height:auto;
+  border-radius:4px;
+  box-shadow: 0 0 8px rgba(255,255,255,0.35);
+  opacity:0.9;
+}
+
+/* SIGNO ZODIACAL */
+.zodiac{
+  margin-top:6px;
+  font-size:22px;
+  letter-spacing:2px;
+  color:#ffd6d6;
+  text-shadow: 0 0 10px rgba(255,120,120,.6);
+}
+
 </style>
 </head>
 <body>
@@ -972,9 +1003,27 @@ html, body{
                style="background-image:url('https://xatimg.com/image/2M7QTBqoHovv.png');">
           </div>
 
-          <div class="name animated-name">
-            <span>𝓓</span><span>𝓪</span><span>𝔂</span>
-          </div>
+<div class="name name-wrapper">
+
+  <!-- Nombre + bandera -->
+  <div class="name-row animated-name">
+    <span>𝓓</span><span>𝓪</span><span>𝔂</span>
+
+    <!-- 🇦🇷 Bandera Argentina -->
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/1/1a/Flag_of_Argentina.svg"
+      class="flag-ar"
+      alt="Argentina"
+    >
+  </div>
+
+  <!-- ♓ Signo Piscis -->
+  <div class="zodiac">
+    ♓ Piscis
+  </div>
+
+</div>
+
 
           <div class="firma-box">
             <div class="firma-bg"></div>
